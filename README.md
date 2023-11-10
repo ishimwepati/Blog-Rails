@@ -18,13 +18,13 @@
 
 # 📖 Blog <a name="about-project"></a>
 
-**blog** is a project where user can create posts, add comments to the post as well, likes.
+**Blog** In this project a user can create posts, add comments to the post as well, likes.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack
 
-This project is built using the following technologies:
+The Following technologies where used : 
 
 <details>
 <summary>Programming Languages</summary>
@@ -60,32 +60,33 @@ Before running this project, make sure you have the following prerequisites inst
 1. Clone this repository to your desired folder:
 
    ```sh
-   git clone https://github.com/sheezu900/blog-rails.git
+   git clone https://github.com/ishimwepati/Blog-Rails.git
 
 2. Navigate to the project directory:
 
     ```sh
     cd blog-rails
-3. Run the program:
+3.  Run the program:
     ```sh
-    rails s
+    rails
 
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
-👤 Shah Zaman
+👤 **Ishimwe Joseph**
 
-LinkedIn: Shah Zaman<br>
+- GitHub: [@ishimwepati](https://github.com/ishimwepati)
+- LinkedIn: [@Ishimwe Jospeh](https://www.linkedin.com/in/ishimwe-joseph-patient-0537b4155/)
 
 
 ## 🔭 Future Features <a name="future-features"></a>
 
 <details>
-<summary>In near future I am planning to implement the following:</summary>
+<summary>Nearly I'm planning to implement the following:</summary>
   <ul>
-    <li>UI</li>
     <li>Allow user to add posts</li>
     <li>Allow user to add comments and likes</li>
+    <li>UI</li>
   </ul>
 </details>
 
@@ -95,12 +96,11 @@ LinkedIn: Shah Zaman<br>
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the issues page.
-[issues page](https://github.com/sheezu900/blog-rails/issues).
-
+[issues page](https://github.com/ishimwepati/Blog-Rails/issues)
 
 <!-- ACKNOWLEDGEMENTS -->
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
-We would like to express my gratitude to the code reviewers who help me improve.
+Thanks a lot to all my reviewer
 
 <!-- LICENSE -->
 ## 📝 License <a name="license"></a>
