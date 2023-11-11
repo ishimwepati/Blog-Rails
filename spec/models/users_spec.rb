@@ -15,7 +15,7 @@ RSpec.describe User, type: :model do
     expect(subject).to_not be_valid
   end
 
-  it 'post_counter should be integer' do
+  it 'post_counter should be an integer' do
     subject.post_counter = 'a'
     expect(subject).to_not be_valid
   end
@@ -24,4 +24,13 @@ RSpec.describe User, type: :model do
     subject.post_counter = -1
     expect(subject).to_not be_valid
   end
+
+  it 'should return the most recent posts' do
+    user = create(:user)  
+    older_post = create(:post, user: user, created_at: 2.days.ago)
+    recent_posts = create_list(:post, 5, user: user, created_at: Time.current)
+
+    expect(user.most_recent_posts).to eq(recent_posts)
+  end
 end
+
