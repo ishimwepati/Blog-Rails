@@ -100,7 +100,7 @@ Feel free to check the issues page.
 
 <!-- ACKNOWLEDGEMENTS -->
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
-Thanks a lot to all my reviewer
+Thanks a lot to all my reviewer and big thanks to the All Microverse Team !
 
 <!-- LICENSE -->
 ## 📝 License <a name="license"></a>
