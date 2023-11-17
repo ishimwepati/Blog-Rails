@@ -1,3 +1,14 @@
+# class UsersController < ApplicationController
+#   # layout 'boilerplate'
+#   def index
+#     @users = User.order(id: :asc)
+#   end
+
+#   def show
+#     @users = User.find(params[:id])
+#   end
+# end
+
 
 class UsersController < ApplicationController
   def index
