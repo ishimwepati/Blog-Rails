@@ -84,7 +84,7 @@ Before running this project, make sure you have the following prerequisites inst
 <details>
 <summary>Nearly I'm planning to implement the following:</summary>
   <ul>
-    <li>UI</li>
+    <li>Build a beautifull UI</li>
     <li>Feature to allow user to add posts</li>
     <li>Feature to allow user to add comments and likes</li>
   </ul>
