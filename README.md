@@ -78,6 +78,11 @@ Before running this project, make sure you have the following prerequisites inst
 - GitHub: [@ishimwepati](https://github.com/ishimwepati)
 - LinkedIn: [@Ishimwe Jospeh](https://www.linkedin.com/in/ishimwe-joseph-patient-0537b4155/)
 
+**Maurice Coker**
+- GitHub: [@coker2019](https://github.com/coker2019)
+- Twitter: [@Olabisi_coker](https://twitter.com/Olabisi_coker)
+- LinkedIn: [maurice-coker-174b129b](https://linkedin.com/in/maurice-coker-174b129b)
+
 
 ## 🔭 Future Features <a name="future-features"></a>
 
