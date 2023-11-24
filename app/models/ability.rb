@@ -2,13 +2,11 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    @user = user || User.new
-
+    @user = user
     can :destroy, Post, author: @user
-    can :destroy, Comment, user_id: @user.id
+    can(:destroy, Comment, user:)
     can :read, Post
     can :read, Comment
-    can :create, Comment
 
     if @user.persisted?
       can :create, Post
