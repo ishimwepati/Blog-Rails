@@ -22,7 +22,7 @@
 
 # 📖 Blog-Rails App Authorization <a name="Blog-Rails"></a>
 
-<b>This is Blog-Rails App.</b>
+<b>This is Blog-Rails App : API</b>
 
 A Ruby on Rails application, but in this milestone we focused on adding cancancan gem to handle authorization in the App...
 
