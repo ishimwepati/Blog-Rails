@@ -1,22 +1,16 @@
-# class UsersController < ApplicationController
-#   # layout 'boilerplate'
-#   def index
-#     @users = User.order(id: :asc)
-#   end
-
-#   def show
-#     @users = User.find(params[:id])
-#   end
-# end
-
-
 class UsersController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @users = User.all
   end
 
   def show
-    @user = User.find_by(id: params[:id])
-    @posts = Post.where(author_id: @user.id)
+    @user = User.find(params[:id].to_i)
+  end
+
+  def logout
+    reset_session
+    redirect_to new_user_session_path, notice: 'Logged out successfully.'
   end
 end

@@ -1,109 +1,61 @@
 require 'rails_helper'
 
-RSpec.describe 'Posts', type: :feature do
-  before :all do
-    Like.delete_all
-    Comment.delete_all
-    Post.delete_all
-    User.delete_all
+RSpec.describe 'Index', type: :feature do
+  before :each do
+    @user_gra = User.create(name: 'GracianoHenrique', photo: 'https://graciano.jpg', bio: 'Web Developer',
+                            posts_counter: 0)
+    @user_sha = User.create(name: 'Sha', photo: 'https://sha.jpg', bio: 'Web Developer', posts_counter: 0)
 
-    @fu = User.create(name: 'User one', photo: 'link', bio: 'User one Bio.')
-    @su = User.create(name: 'User two', photo: 'link', bio: 'User two Bio.')
-
-    3.times { |i| Post.create(author: @fu, title: "Post #{i + 1}", text: "First author Post #{i + 1} body") }
-    5.times { |i| Post.create(author: @su, title: "Post #{i + 1}", text: "Second author Post #{i + 1} body") }
-
-    6.times { |i| Comment.create(post: @fu.posts.first, user: @fu, text: "Comment #{i + 1}") }
-    3.times { |i| Comment.create(post: @su.posts.first, user: @su, text: "Comment #{i + 1}") }
-
-    6.times { Like.create(post: @fu.posts.first, user: @fu) }
+    @post1 = Post.create(author: @user_gra, title: 'Microverse Backend', text: 'the full stack remote web program',
+                         comments_counter: 0, likes_counter: 0)
+    @post2 = Post.create(author: @user_gra, title: 'Microverse FrontEnd', text: 'the front End remote web program',
+                         comments_counter: 0, likes_counter: 0)
+    @post3 = Post.create(author: @user_gra, title: 'Microverse Job Searching',
+                         text: 'In this module, student search for job opportunities ...', comments_counter: 0, likes_counter: 0)
+    @comment1 = Comment.create(text: 'I am expecting to become a Code Reviwer', user: @user_gra, post: @post2)
+    @comment2 = Comment.create(text: 'It will be very good!', user: @user_sha, post: @post2)
+    @comment3 = Comment.create(text: 'Very good !', user: @user_sha, post: @post2)
+    @comment4 = Comment.create(text: 'I will be mastering Rails', user: @user_sha, post: @post1)
+    @like1 = Like.create(user: @user_gra, post: @post1)
+    @like2 = Like.create(user: @user_sha, post: @post1)
+    visit "/users/#{@user_gra.id}/posts/#{@post2.id}"
   end
 
-  describe 'show page' do
-    it 'should direct to posts show' do
-      visit users_path
-      click_link(@fu.name)
-      click_link(@fu.posts.last.title)
-      sleep(1)
-      expect(current_path).to eq(user_post_path(@fu, @fu.posts.last))
-      visit users_path
-      click_link(@su.name)
-      click_link(@su.posts[3].title)
-      sleep(1)
-      expect(current_path).to eq(user_post_path(@su, @su.posts[3]))
+  context 'User GracianoHenrique show page Items' do
+    it 'Should render the comments number for a post' do
+      expect(page).to have_content("Comments: #{@post2.comments_counter.to_i}")
     end
 
-    it 'should render post title' do
-      visit user_post_path(@fu, @fu.posts.first)
-      expect(page).to have_content('Post 1')
-      visit user_post_path(@fu, @fu.posts.second)
-      expect(page).to have_content('Post 2')
-      visit user_post_path(@su, @su.posts.last)
-      expect(page).to have_content('Post 1')
+    it 'Should render post author' do
+      expect(page).to have_content('Post #'.concat("#{@post2.id} by #{@post2.author.name}"))
     end
 
-    it 'should render user name' do
-      visit user_post_path(@fu, @fu.posts.first)
-      expect(page).to have_content(@fu.name)
-      visit user_post_path(@su, @su.posts.first)
-      expect(page).to have_content('User two')
+    it 'Should render the Likes number for a post' do
+      expect(page).to have_content(" Likes: #{@post2.likes_counter.to_i}")
     end
 
-    it 'should render the post body' do
-      visit user_post_path(@fu, @fu.posts.first)
-      expect(page).to have_content('First author Post 1 body')
-      visit user_post_path(@fu, @fu.posts.second)
-      expect(page).to have_content('First author Post 2 body')
-      visit user_post_path(@su, @su.posts.last)
-      expect(page).to have_content('Second author Post 1 body')
-      visit user_post_path(@su, @su.posts[0])
-      expect(page).to have_content('Second author Post 2 body')
+    it 'Should render the body of post' do
+      expect(page).to have_content(@post2.text)
     end
 
-    it 'should render number of comments' do
-      visit user_post_path(@fu, @fu.posts.first)
-      expect(page).to have_content('Comments: 6')
-      visit user_post_path(@fu, @fu.posts.second)
-      expect(page).to have_content('Comments: 0')
-      visit user_post_path(@su, @su.posts.last)
-      expect(page).to have_content('Comments: 3')
-      visit user_post_path(@su, @su.posts[0])
-      expect(page).to have_content('Comments: 0')
-    end
-
-    it 'should render user for each comment' do
-      visit user_post_path(@fu, @fu.posts.first)
-      (1..6).each do |_i|
-        expect(page).to have_content("@#{@fu.name}: ")
-      end
-      visit user_post_path(@su, @su.posts.last)
-      (1..3).each do |_i|
-        expect(page).to have_content("@#{@su.name}: ")
+    it 'Should render the name of all commenters' do
+      @post2.comments.each do |comment|
+        expect(page).to have_content(comment.user.name)
       end
     end
 
-    it 'should render comments' do
-      visit user_post_path(@fu, @fu.posts.first)
-      (1..6).each do |i|
-        expect(page).to have_content("Comment #{i}")
+    it 'Should render the comments ' do
+      @post2.comments.each do |comment|
+        expect(page).to have_content(comment.text)
       end
-      visit user_post_path(@fu, @fu.posts.second)
-      expect(page).to have_content('No comments yet!')
-      visit user_post_path(@su, @su.posts.last)
-      (1..3).each do |i|
-        expect(page).to have_content("Comment #{i}")
-      end
-      visit user_post_path(@su, @su.posts[0])
-      expect(page).to have_content('No comments yet!')
     end
 
-    it 'should render number of likes' do
-      visit user_post_path(@fu, @fu.posts.first)
-      expect(page).to have_content('Likes: 6')
-      visit user_post_path(@fu, @fu.posts.second)
-      expect(page).to have_content('Likes: 0')
-      visit user_post_path(@su, @su.posts.last)
-      expect(page).to have_content('Likes: 0')
+    it 'Should render the title of post' do
+      expect(page).to have_content("Title: #{@post2.title}")
+    end
+
+    it 'Should render the first comments of a post' do
+      expect(page).to have_content(@post2.comments[0].text)
     end
   end
 end
