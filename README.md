@@ -18,7 +18,7 @@
 
 # 📖 Blog <a name="about-project"></a>
 
-**Blog** In this project a user can create posts, add comments to the post as well, likes.
+**Blog** In this project of us a user can create posts, add comments to the post as well, likes.
 
 ## 🛠 Built With <a name="built-with"></a>
 
