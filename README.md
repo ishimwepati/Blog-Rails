@@ -1,78 +1,102 @@
+<!-- TABLE OF CONTENTS -->
 
-# 📗 Table of Contents
+## 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-- [💻 Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ](#faq)
-- [📝 License](#license)
+- [📖 Technology-Blog-App ](#Blog-Rails)
+  - [🛠 Built With ](#built-with)
+    - [Tech Stack ](#tech-stack)
+    - [Key Features ](#key-features)
+  - [💻 Getting Started ](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Install](#install)
+    - [Usage](#usage)
+  - [👥 Authors ](#authors)
+  - [🔭 Future Features ](#future-features)
+  - [🤝 Contributing ](#contributing)
+  - [⭐️ Show your support ](#️show-your-support)
+  - [🙏 Acknowledgments ](#acknowledgments)
+  - [📝 License ](#license)
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Blog <a name="about-project"></a>
+# 📖 Blog-Rails App Authorization <a name="Blog-Rails"></a>
 
-**Blog** In this project a user can create posts, add comments to the post as well, likes.
+<b>This is Blog-Rails App : API</b>
+
+A Ruby on Rails application, but in this milestone we focused on adding cancancan gem to handle authorization in the App...
 
 ## 🛠 Built With <a name="built-with"></a>
-
-### Tech Stack
-
-The Following technologies where used : 
+<div >
+<img src="https://res.cloudinary.com/practicaldev/image/fetch/s--233aRTvn--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/i/cpcr5w0kgl6j94tss7n9.png" width="400px" height="150px">
+</div >
+<br>
+<div >
+<img src="https://kinsta.com/wp-content/uploads/2022/02/postgres-logo.png" width="400px" height="150px">
+</div >
+<a name="tech-stack"></a>
 
 <details>
-<summary>Programming Languages</summary>
-  <ul>
-    <li>Ruby on Rails</li>
-  </ul>
+  <summary>Server</summary>
+    <li><a href="https://guides.rubyonrails.org/">Rails</a></li>
 </details>
+
+<!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
-<details>
-  <ul>
-    <li>App has a database</li>
-    <li>Database has 4 tables (Users, Posts, Comments, Likes)</li>
-  </ul>
-</details>
+- **Create Ruby on Rails App**
+- **Add Linter ROR**
+- **Create data model**
+- **Add Request Test**
+- **Add Integration Test**
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
-## Getting Started <a name="getting-started"></a>
+## 💻 Getting Started <a name="getting-started"></a>
 
-To get started with the blog, follow the steps below:
+To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-Before running this project, make sure you have the following prerequisites installed:
+In order to run this project you need:
 
-- Ruby on rails
+```
+    Ruby
+    Rails
+    NodeJS
+    Postgresql
+    bundler
+    WebBrowser
+    IDE eg: {VScode}
+```
 
-### Installation <a name="installation"></a>
+### Setup
 
-1. Clone this repository to your desired folder:
+Clone this repository to your desired folder:
 
-   ```sh
-   git clone https://github.com/ishimwepati/Blog-Rails.git
+```bash
+  git clone https://github.com/ishimwepati/Blog-Rails.git
+```
+### Install
 
-2. Navigate to the project directory:
+Install this project with:
 
-    ```sh
-    cd blog-rails
-3.  Run the program:
-    ```sh
-    rails
+```bash
+  cd Blog-Rails
+  bundle install
+```
+
+it will install the required gemfile for running the project
+
+### Usage
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
 
-## 👥 Authors <a name="authors"></a>
+## 👥 Authors <a name="author"></a>
 👤 **Ishimwe Joseph**
 
 - GitHub: [@ishimwepati](https://github.com/ishimwepati)
@@ -82,31 +106,46 @@ Before running this project, make sure you have the following prerequisites inst
 - GitHub: [@coker2019](https://github.com/coker2019)
 - Twitter: [@Olabisi_coker](https://twitter.com/Olabisi_coker)
 - LinkedIn: [maurice-coker-174b129b](https://linkedin.com/in/maurice-coker-174b129b)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-<details>
-<summary>Nearly I'm planning to implement the following:</summary>
-  <ul>
-    <li>Build a beautifull UI</li>
-    <li>Feature to allow user to add posts</li>
-    <li>Feature to allow user to add comments and likes</li>
-  </ul>
-</details>
+- **processing data in models**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
+
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the issues page.
-[issues page](https://github.com/ishimwepati/Blog-Rails/issues)
+Feel free to check the [issues page](https://github.com/ishimwepati/Blog-Rails/issues).
 
-<!-- ACKNOWLEDGEMENTS -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
+
+If you like this project you can share this project to your friend
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENT -->
+
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
-Thanks a lot to all my reviewer and big thanks to the All Microverse Team !
+
+We thank Microverse and all the contributors for this project
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
+
 ## 📝 License <a name="license"></a>
+
 This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
