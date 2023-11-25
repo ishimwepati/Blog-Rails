@@ -11,8 +11,10 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    @user = User.find_by(email: resource.email)
-    session[:user] = @user
+    session[:user_email] = resource.email
+    @user = User.where(email: session[:user_email]).first
+    session[:user_id] = @user.id
+
     root_path
   end
 end

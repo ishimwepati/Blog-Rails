@@ -24,7 +24,7 @@
 
 <b>This is Blog-Rails App : API</b>
 
-A Ruby on Rails application, but in this milestone we focused on adding cancancan gem to handle authorization in the App...
+**Blog** In this project a user can create posts, add comments to the post as well, likes.
 
 ## 🛠 Built With <a name="built-with"></a>
 <div >
@@ -130,8 +130,7 @@ Feel free to check the [issues page](https://github.com/ishimwepati/Blog-Rails/i
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project you can share this project to your friend
-
+If you like this project you can share this project to your followers and friends
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGEMENT -->
